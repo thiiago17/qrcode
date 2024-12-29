@@ -15,17 +15,14 @@
   <body>
     <div class="container">
       <div class="row">
+        <p class="text-center tracking-in-expand" id="titulo"><i class="bi bi-qr-code-scan"></i> QR CODE GENERATOR</p>
         <div class="col">
-          <p class="text-center" id="titulo"><i class="bi bi-qr-code-scan"></i> QR CODE GENERATOR</p>
-          <form method="post" action="{{url_for("generar")}}">
-            <div class="mb-3">
+          <form method="post" action="{{url_for("generar")}}" id="formulario">
+            <div class="input-container">
               <label for="qrlink" class="form-label"></label>
-              <div class="input-group">
-                <input type="text" class="form-control" name="qrlink" id="qrlink" autofocus>    
-                <button type="submit" class="btn btn-primary" id="generar">Generar</button>
-              </div>
+              <input type="text" class="form-control" name="qrlink" id="qrlink" autofocus>    
+              <button type="submit" class="btn btn-primary" id="generar">Generar</button>
             </div>
-          </form>
         </div> <!--col 1-->
       </div> <!--row 1-->
 
@@ -35,7 +32,8 @@
           <div class="text-center">
             <img src="data:image/png;base64,{{qr_img}}" alt=""> 
             <br>
-            <a href="data:image/png;base64,{{qr_img}}" download="codigoqr.png" class="btn btn-primary">Descargar QR</a>
+            <br>
+            <a href="data:image/png;base64,{{qr_img}}" download="codigoqr.png" class="btn btn-primary" id="descargar">Descargar QR &nbsp; <i class="bi bi-download"></i></a>
           </div>
         </div> <!--col 2-->
       </div> <!--row 2-->
@@ -43,9 +41,20 @@
     </div> <!--container-->
 
 
-    
-
-    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-wEmeIV1mKuiNp12O1gnLIaRWXV1bWwBId2yz5O79pNA12p0h+uAM5M4k1LZD2tgA" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#generar").click(function(e){
+          e.preventDefault();
+          $.LoadingOverlay("show", {
+        });
+        setTimeout(function(){
+            $("#formulario").submit();
+        }, 700);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -16,7 +16,7 @@ def generar():
     
     qr = qrcode.QRCode( #IMPORTANTE: SI EL ARCHIVO SE LLAMA qrcode.py GENERA CONFLICTO Y DA ATRIBUTE ERROR
     version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    error_correction=qrcode.constants.ERROR_CORRECT_M,
     box_size=10,
     border=4,
 )

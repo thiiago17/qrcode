@@ -1,24 +1,107 @@
 body{
-    background-color: rgb(2,0,36);
+    background-color: rgb(17, 22, 41);
 }
 
 .container{
-    margin-top: 250px;
+    margin-top: 150px;
 }
 
 #titulo{
     color: #4A90E2;
+    font-size: x-large;
+    font-weight: 450;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.input-container {
+    position: relative; /* Necesario para posicionar el botón dentro del contenedor */
+  }
+
 input[name="qrlink"]{
-    border-radius: 30px;
-    border-width: 3px;
+    color: white;
+    border-radius: 20px;
+    border-width: 2px;
+    height: 75px;
+    background-color: black;
+    border-color: #4CA1D1;
+}
+
+input[name="qrlink"]:focus{
+    color: white;
+    background-color: black;
+    border-color: #088096
 }
 
 #generar{
+    position: absolute;
+    width: 148px;
+    height: 57px;
     margin-right: 70px;
+    border-radius: 20px;
+    left: 88%;
+    top: 33%; /* Centra el botón verticalmente */
+    background-color: white;
+    color: black;
+    font-size: large;
+}
+
+#generar:hover{
+  background-color: rgb(206, 206, 206);
 }
 
 #qr-section{
-    margin-top: 100px;
+    margin-top: 70px;
 }
+
+img{
+    width: 30%;
+    height: 30%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 100px rgb(44, 79, 173); 
+}
+
+#descargar{
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    font-size: large;
+}
+
+#descargar:hover{
+  background-color: rgb(206, 206, 206);
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 1.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 1.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+ @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
