@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,url_for,redirect,session,flash,jsonify,send_file #borrar las q no use
+from flask import Flask,render_template,request,url_for,redirect 
 import io
 import base64
 import qrcode
@@ -36,5 +36,4 @@ def generar():
 
 
 if __name__=="__main__":
-    #app.run(host="0.0.0.0", port=5000) #para q entre alguien con misma ip
     app.run(debug=True)

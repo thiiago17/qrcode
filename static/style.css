@@ -39,7 +39,7 @@ input[name="qrlink"]:focus{
     margin-right: 70px;
     border-radius: 20px;
     left: 88%;
-    top: 33%; /* Centra el botón verticalmente */
+    top: 33%; 
     background-color: white;
     color: black;
     font-size: large;

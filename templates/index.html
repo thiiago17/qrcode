@@ -51,7 +51,8 @@
           $.LoadingOverlay("show", {
         });
         setTimeout(function(){
-            $("#formulario").submit();
+          $.LoadingOverlay("hide");
+          $("#formulario").submit();
         }, 700);
         });
       });
